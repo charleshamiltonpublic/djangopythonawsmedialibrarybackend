@@ -1,0 +1,5 @@
+- This is the server side of my media library app
+- It uses Django hosted on aws elastic beanstalk as a backend
+- It uses React.js hosted on aws cloudfront as a frontend
+- The backend can be found here: http://medialibrary.eba-8w5qchtp.us-east-2.elasticbeanstalk.com/
+- The frontend can be found here: http://reactfrontenddjango.s3-website.us-east-2.amazonaws.com/

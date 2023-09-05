@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h2>Media Dashboard</h2>
+    
+    <!-- Search, Sorting, and Filtering Form -->
+    <form method="get" class="search-sort-filter-form">
+        <!-- Search -->
+        <input type="text" name="q" placeholder="Search...">
+
+        <!-- Sorting -->
+        <select name="sort_by">
+            <option value="uploaded_at">Date</option>
+            <option value="filetype">Type</option>
+            <!-- Add more options as needed -->
+        </select>
+
+        <!-- Filtering by Type -->
+        <select name="file_type">
+            <option value="image">Image</option>
+            <option value="video">Video</option>
+            <!-- Add more options as needed -->
+        </select>
+
+        <!-- Filtering by Tags -->
+        <select name="tag">
+            {% for tag in all_tags %}
+            <option value="{{ tag.name }}">{{ tag.name }}</option>
+            {% endfor %}
+        </select>
+
+        <button type="submit">Search</button>
+    </form>
+    
+    <!-- Display Media Files -->
+    {% if media_files %}
+    <ul>
+        {% for media in media_files %}
+        <li>
+            <div class="media-item">
+                <!-- Display thumbnail -->
+                {% if media.thumbnail %}
+                    <img src="{{ media.thumbnail.url }}" alt="Thumbnail for {{ media.title }}">
+                {% else %}
+                    <p>No Thumbnail</p>
+                {% endif %}
+
+                <h3>{{ media.title }}</h3>
+                <p>{{ media.description }}</p>
+                <div class="media-metadata">
+                    {% if media.metadata %}
+                        <h4>Metadata:</h4>
+                        <ul>
+                            {% for key, value in media.metadata.items %}
+                                <li><strong>{{ key }}:</strong> {{ value }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% else %}
+                        <p>No Metadata available</p>
+                    {% endif %}
+                </div>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>No media files have been uploaded yet.</p>
+    {% endif %}
+</div>
+{% endblock %}

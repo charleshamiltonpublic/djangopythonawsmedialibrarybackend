@@ -1,0 +1,25 @@
+.media-item {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.media-item img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.media-metadata {
+    background-color: #f9f9f9;
+    padding: 5px;
+    border-top: 1px solid #ddd;
+    margin-top: 10px;
+}
+
+.media-metadata ul {
+    list-style-type: none;
+    padding: 0;
+}

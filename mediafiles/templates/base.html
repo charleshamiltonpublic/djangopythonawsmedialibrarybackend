@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+<link rel="stylesheet" href="{% static 'media_styles.css' %}">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Library</title>
+    <!-- You can also link to CSS files, JavaScript, or other assets here. -->
+</head>
+<body>
+
+<header>
+    <!-- This is a placeholder for a header. You can add navigation links, a site logo, etc. -->
+    <h1>Media Library</h1>
+</header>
+
+<main>
+    {% block content %}
+    <!-- Content from child templates will appear here. -->
+    {% endblock content %}
+</main>
+
+<footer>
+    <!-- This is a placeholder for a footer. You can add copyright info, links, etc. -->
+    <p>© 2023 Media Library</p>
+</footer>
+
+</body>
+</html>
